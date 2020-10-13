@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/logo.png" />
+    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/logo.svg" />
 </h1>
 
 <h4 align="center"> 
@@ -28,9 +28,15 @@
 ### Mobile
 
 <p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./,github/home-mobile.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/home-mobile.png" width="200px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./,github/detalhes-mobile.svg" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/map-mobile.png" width="200px">
+  
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-1.png" width="200px">
+  
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-2.png" width="200px">
+  
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/view-orfanato.png" width="200px">
 </p>
 
 
