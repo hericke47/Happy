@@ -27,15 +27,14 @@
 ### Mobile
 
 <p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/home-mobile.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/home-mobile.png" height="500px" >
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/map-mobile.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/map-mobile.png" height="500px" >
   
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-1.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-1.png" height="500px" >
   
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-2.png" width="200px">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-2.png" height="500px" >
   
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/view-orfanato.png" width="200px">
 </p>
 
 
