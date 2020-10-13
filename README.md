@@ -22,7 +22,6 @@
   
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-web-2.png" width="400px">
   
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/perfil-orfanato.png" width="400px">
 </p>
 
 ### Mobile
