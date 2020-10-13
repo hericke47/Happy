@@ -35,7 +35,6 @@
   
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/cadastro-mobile-2.png" height="500px" >
   
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/view-orfanato.png" height="500px" >
 </p>
 
 
