@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./.github/logo.svg" />
+    <img alt="NextLevelWeek" title="#NextLevelWeek" style="background= '#000'" src="./.github/map-marker.svg" />
 </h1>
 
 <h4 align="center"> 
