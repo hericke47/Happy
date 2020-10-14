@@ -1,14 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {FiPlus} from 'react-icons/fi';
-
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, TileLayer, Marker } from 'react-leaflet';
+import Leaflet from 'leaflet';
 
 import 'leaflet/dist/leaflet.css';
 
 import mapMarkerImg from '../images/map-marker.svg';
 
 import '../styles/pages/Orphanages-map.css';
+
+const mapIcon = Leaflet.icon({
+  iconUrl: mapMarkerImg,
+});
 
 function OrphanagesMap() {
   return (
@@ -36,6 +40,11 @@ function OrphanagesMap() {
         <TileLayer url={`
           https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}
         `} />
+
+        <Marker 
+          position={[-28.4706384, -49.0312173]}
+          icon={mapIcon}
+        />
       </Map>
 
       <Link to="/" className="create-orphanage">
