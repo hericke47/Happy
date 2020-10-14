@@ -3,8 +3,8 @@ import path from 'path';
 import cors from 'cors';
 
 import 'express-async-errors';
-
 import './database/connection';
+
 import routes from './routes';
 import errorHandler from './errors/handler';
 
