@@ -8,7 +8,7 @@
 
 #page-map aside {
   width: 440px;
-  background: linear-gradient(329.54deg, #29B6D1 0%, #00C7C7 100%);
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
   padding: 80px;
 
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 #page-map aside h2 {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 42px;
   margin-top: 64px;
@@ -59,15 +59,15 @@
   justify-content: center;
   align-items: center;
 
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 
 #page-map .create-orphanage:hover {
-  background: #17d6eb ;
+  background: #17d6eb;
 }
 
 #page-map .map-popup .leaflet-popup-content-wrapper {
-  background: rgba(255,255,255, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   box-shadow: none;
 }
