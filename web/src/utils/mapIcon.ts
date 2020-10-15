@@ -7,7 +7,7 @@ const mapIcon = Leaflet.icon({
 
   iconSize: [58, 68],
   iconAnchor: [29, 68],
-  popupAnchor: [170, 4],
+  popupAnchor: [0, -60],
 });
 
 export default mapIcon;
