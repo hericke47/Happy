@@ -1,4 +1,4 @@
-Responsible for provide data to the [`web`](https://github.com/DiegoVictor/happy-web) front-end. Permit to register orphanages. The app has validation, also a simple versioning was made.
+Responsible for provide data to the web front-end. Permit to register orphanages. The app has validation, also a simple versioning was made.
 
 ## Table of Contents
 * [Installing](#installing)
