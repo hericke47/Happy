@@ -55,7 +55,7 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends,
+      open_on_weekends: open_on_weekends === 'true',
       images
     }
 
@@ -73,7 +73,6 @@ export default {
         })
       )
     })
-
 
     await schema.validate(data, {
       abortEarly: false,

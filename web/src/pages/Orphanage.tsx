@@ -118,7 +118,7 @@ export default function Orphanage() {
 
                 <div className="open-on-weekends dont-open">
                   <FiInfo size={32} color="#ff669d" />
-                  Não atendeos fim de semana <br />
+                  Não atendemos fim de semana <br />
                 </div>
               )}
             </div>
