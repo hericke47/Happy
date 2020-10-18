@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, ScrollView, Text, StyleSheet, Dimensions } from 'react-native';
+import { Image, View, ScrollView, Text, StyleSheet, Dimensions, Linking } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { Feather, FontAwesome } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
@@ -9,6 +9,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import api from '../services/api';
+import { TouchableOpacity } from 'react-native';
 
 interface OrphanageDetailsRouteParams {
   id: number;
@@ -47,6 +48,10 @@ export default function OrphanageDetails() {
         <Text style={styles.description}>Carregando...</Text>
       </View>
     )
+  }
+
+  function handleOpenGoogleMapsRoutes(){
+    Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${orphanage?.latitude},${orphanage?.longitude}`)
   }
 
   return (
@@ -92,9 +97,9 @@ export default function OrphanageDetails() {
             />
           </MapView>
 
-          <View style={styles.routesContainer}>
+          <TouchableOpacity onPress={handleOpenGoogleMapsRoutes}  style={styles.routesContainer}>
             <Text style={styles.routesText}>Ver rotas no Google Maps</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       
         <View style={styles.separator} />
@@ -107,10 +112,19 @@ export default function OrphanageDetails() {
             <Feather name="clock" size={40} color="#2AB5D1" />
             <Text style={[styles.scheduleText, styles.scheduleTextBlue]}>Segunda à Sexta {orphanage.opening_hours}</Text>
           </View>
-          <View style={[styles.scheduleItem, styles.scheduleItemGreen]}>
-            <Feather name="info" size={40} color="#39CC83" />
-            <Text style={[styles.scheduleText, styles.scheduleTextGreen]}>Atendemos fim de semana</Text>
+          
+          {orphanage.open_on_weekends ? (
+            <View style={[styles.scheduleItem, styles.scheduleItemGreen]}>
+              <Feather name="info" size={40} color="#39CC83" />
+              <Text style={[styles.scheduleText, styles.scheduleTextGreen]}>Atendemos fim de semana</Text>
+            </View>
+          ) : (
+            <View style={[styles.scheduleItem, styles.scheduleItemRed]}>
+              <Feather name="info" size={40} color="#ff669d" />
+              <Text style={[styles.scheduleText, styles.scheduleTextRed]}>Não Atendemos fim de semana</Text>
           </View>
+          )}
+
         </View>
 {/* 
         <RectButton style={styles.contactButton} onPress={() => {}}>
@@ -211,6 +225,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 
+  scheduleItemRed: {
+    backgroundColor: '#fef6f9',
+    borderWidth: 1,
+    borderColor: '#ffbcd4',
+    borderRadius: 20,
+  },
+
   scheduleText: {
     fontFamily: 'Nunito_600SemiBold',
     fontSize: 16,
@@ -224,6 +245,10 @@ const styles = StyleSheet.create({
 
   scheduleTextGreen: {
     color: '#37C77F'
+  },
+
+  scheduleTextRed: {
+    color: '#ff669d'
   },
 
   contactButton: {
