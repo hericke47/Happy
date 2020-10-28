@@ -1,41 +1,43 @@
-import { Request, Response} from 'express';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { Request, Response } from 'express';
+import { getRepository } from 'typeorm';
 
-import CreateUser from '../services/CreateUser';
-import AuthenticateUserService from '../services/AuthenticateUserService';
+import * as Yup from 'yup';
 
+import PasswordHash from '../config/PasswordHash';
+
+import User from '../models/Users';
 
 export default {
+  async create(req: Request, res: Response) {
+    const { name, email, password, whatsapp } = req.body;
 
-    async create(request: Request, response: Response){
+    const hashedPassword: string = await PasswordHash.hash(password);
 
-        const {name, email, password} = request.body;
-        
-        const createUser = new CreateUser();
+    const usersRepository = getRepository(User);
 
-        const user = await createUser.execute({
-            name,
-            email,
-            password
-        });
+    const data = {
+      name,
+      email,
+      password: hashedPassword,
+      whatsapp,
+    };
 
-        return response.json(user);
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string().required(),
+      password: Yup.string().required().min(6),
+      whatsapp: Yup.string().required(),
+    });
 
-    },
+    await schema.validate(data, {
+      abortEarly: false,
+    });
 
-    async login(request: Request, response: Response){
+    const user = usersRepository.create(data);
 
-        const { email, password } = request.body;
-        
-        const authenticateUser = new AuthenticateUserService();
+    await usersRepository.save(user);
 
-        const {user, token} = await authenticateUser.execute({
-            email,
-            password
-        })
-
-        return response.json({user, token});
-    }
-
-
-
+    return res.json(user);
+  },
 };
